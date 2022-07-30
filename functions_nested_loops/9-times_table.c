@@ -2,7 +2,7 @@
 
 /**
  * print_row - prints the rows of the 9 times table
- * multi_row - number which idx will be multiplied by
+ * @multi_row - number which idx will be multiplied by
  *
  * Return: null
  */

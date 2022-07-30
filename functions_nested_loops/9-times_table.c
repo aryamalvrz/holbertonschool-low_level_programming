@@ -10,28 +10,28 @@ void print_row(int multi_row)
 {
 	int idx, check;
 
-	for(idx = 0; idx <= 9; idx++)
+	for (idx = 0; idx <= 9; idx++)
 	{
-			check = idx * multi_row;
-			if (check > 9)
+		check = idx * multi_row;
+		if (check > 9)
+		{
+			_putchar(' ');
+			_putchar((check / 10) + '0');
+			_putchar((check % 10) + '0');
+		}
+		else
+		{
+			if (idx != 0)
 			{
 				_putchar(' ');
-				_putchar((check / 10) + '0');
-				_putchar((check % 10) + '0');
-			}
-			else
-			{
-				if (idx != 0)
-				{
-					_putchar(' ');
-					_putchar(' ');
-				}
-				_putchar(check + '0');
-			}
-			if (idx != 9)
-			{
 				_putchar(' ');
 			}
+			_putchar(check + '0');
+		}
+		if (idx != 9)
+		{
+			_putchar(',');
+		}
 	}
 }
 
@@ -48,5 +48,5 @@ void times_table(void)
 	{
 		print_row(column);
 		_putchar('\n');
-	}	
+	}
 }

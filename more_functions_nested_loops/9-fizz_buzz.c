@@ -4,6 +4,7 @@
  *main - Prints numbers from 1 to 100, replacing multiples of 3
  *with Fizz, and 5 with Buzz, and multiples having both 3 and 5
  *replace with FizzBuzz
+ *Return: 0
  */
 int main(void)
 

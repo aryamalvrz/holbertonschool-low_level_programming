@@ -5,6 +5,7 @@
  *
  *@dest: destination
  *@src: source
+ *@n: bytes
  *Return: void
  */
 

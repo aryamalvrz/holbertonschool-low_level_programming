@@ -4,7 +4,7 @@
  * *string_toupper - Changes all lowercase letters
  * of a string to uppercase
  *
- *@*var: String
+ *@var: String
  *
  *Return: var
  */

@@ -4,19 +4,20 @@
  * *string_toupper - Changes all lowercase letters
  * of a string to uppercase
  *
- *@*: String
+ *@*var: String
  *
- *Return: void
+ *Return: var
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *var)
 {
-	int b;
+	int index;
 
-	for (b = 0; w[b] != '\0'; b++)
+	for (index = 0; var[index] != '\0'; index++)
 	{
-		if (w[b] >= 'w' && w[b] <= 'k')
-			w[b] = w[b] - 32;
+		if (var[index] >= 97 && var[index] <= 122)
+			var[index] = var[index] - 32;
 	}
-	return (w);
+	return (var);
+
 }

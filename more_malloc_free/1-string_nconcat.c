@@ -5,14 +5,14 @@
  *
  * @s1: String 1
  * @s2: String 2
- * @n: Max number of bytes
+ * @n: Max number of bytes to be concatenated
  *
- * Return: void
+ * Return: *s Pointer to the new string
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int length1, length2, a, y, sum = 0;
+	unsigned int i = 0, l = 0, a = 0, y = 0;
 	char *s;
 
 	if (s1 == NULL)
@@ -20,30 +20,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s2 == NULL)
 		s2 = "";
-
-	for (length1 = 0; s1[length1] != '\0'; length1++)
-
-		for (length2 = 0; s2[length2] != '\0'; length2++)
-
-			if (n >= length2)
-				sum = length1 + length2;
-			else
-				sum = length1 + n;
-	s = malloc(sizeof(char) * (sum + 1));
-
-	if (s == 0)
+	while (s1[i])
+		i++;
+	while (s2[a])
+		a++;
+	if (n >= a)
+		y = i + a;
+	else
+		y = i + n;
+	s = malloc(sizeof(char) * y + 1);
+	if (s == NULL)
 		return (NULL);
-
-	for (a = 0; s1[a] != '\0'; a++)
+	a = 0;
+	while (l < y)
 	{
-		s[a] = s1[a];
-	}
-	if (n < length2)
-		for (y = 0; y < n; y++)
+		if (l <= i)
+			s[l] = s1[l];
+		if (l >= i)
 		{
-			s[a] = s2[y];
+			s[l] = s2[a];
 			a++;
 		}
-	s[a] = '\0';
+		l++;
+	}
+	s[l] = '\0';
 	return (s);
 }

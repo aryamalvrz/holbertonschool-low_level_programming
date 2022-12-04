@@ -1,15 +1,32 @@
 #include "main.h"
-
 /**
- * cap_string - Capitalizes all words of a string
+ * *cap_string - capitalizesall words of a string
  *
- *@var: First Letter
+ * @a: string
  *
- *Return: 0
+ * Return: void
  */
 
-char *cap_string(char *var)
+char *cap_string(char *a)
 {
-int index;
-	
+	int x;
+
+	for (x = 0; a[x] != '\0'; x++)
+	{
+		if (a[x] >= 'a' && a[x] <= 'z')
+		{
+			if ((a[x - 1] >= 0 && a[x - 1] <= 47) || (a[x - 1] >= 58 && a[x - 1] <= 63))
+			{
+				if (!(a[x - 1] == 45))
+				{
+					a[x] = a[x] - 32;
+				}
+			}
+			else if (a[x - 1] == 123 || a[x - 1] == 125)
+			{
+				a[x] = a[x] - 32;
+			}
+		}
+	}
+	return (a);
 }
